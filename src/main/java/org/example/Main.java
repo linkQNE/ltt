@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class Main {
-    public static WebDriver init(String browser, WebDriver wd) {
+    public static WebDriver init(WebDriver wd) {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();

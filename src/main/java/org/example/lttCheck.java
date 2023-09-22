@@ -17,8 +17,9 @@ public class lttCheck {
 
     @Test
     public void testLtt() {
-        driver = Main.init("chrome", driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));;
+        driver = Main.init(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
         driver.get("https://ltt.rocks/login");
         visibilityOfElementLocated("//input [@id = 'username']").sendKeys("adminuser");
         visibilityOfElementLocated("//input [@id = 'password']").sendKeys("pass");
