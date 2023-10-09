@@ -1,0 +1,20 @@
+version: "3"
+services:
+  hub:
+    image: selenium/hub:latest
+    ports:
+      - "4444:4444"
+      - "4443:4443"
+      - "4442:4442"
+    environment:
+      - GRID_BROWSER_TIMEOUT=300
+      - GRID_TIMEOUT=300
+  chrome:
+    image: selenium/node-chrome:latest
+    ports:
+      - "7900:7900"
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+      - SE_VNC_NO_PASSWORD=1
